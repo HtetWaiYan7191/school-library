@@ -103,9 +103,9 @@ it will install the required gemfile for running the project
 
 ## 👥 Author <a name="author"></a>
 
-👤 Ichsan Sandy
+👤 Htet Wai Yan
 
-- GitHub: [@ichsansandy](https://github.com/HtetWaiYan7191)
+- GitHub: [@HtetWaiYan7191](https://github.com/HtetWaiYan7191)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
