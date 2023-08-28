@@ -1,6 +1,7 @@
 require_relative 'nameable'
 require_relative 'capitalize_decorator'
 require_relative 'trimmer_decorator'
+require_relative 'rental'
 
 class Person < Nameable
   attr_accessor :name, :age, :rental
@@ -29,16 +30,20 @@ class Person < Nameable
     @age && @age >= 18
   end
 
+  def add_rental(date, book)
+    Rental.new(date, self, book)
+  end
+
   def generate_id
     rand(1..1000)
   end
 end
 
-person = Person.new(22, 'maximillianus')
-puts person.correct_name
+# person = Person.new(22, 'maximillianus')
+# puts person.correct_name
 
-capitalized_person = CapitalizeDecorator.new(person)
-puts capitalized_person.correct_name
+# capitalized_person = CapitalizeDecorator.new(person)
+# puts capitalized_person.correct_name
 
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-puts capitalized_trimmed_person.correct_name
+# capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+# puts capitalized_trimmed_person.correct_name
