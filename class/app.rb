@@ -6,11 +6,11 @@ require_relative './teacher'
 
 class App 
         def self.list_books 
-            Book.all.map { |book| puts "Title: #{book.title}, Author: #{booka.author} "}
+             Book.all.map { |book| puts "Title: #{book.title}, Author: #{book.author}" }
         end
 
         def self.list_persons
-            Person.all.map { |person| puts "ID: #{person.id} , Name: #{person.name}, Age: #{person.age}"}
+             Person.all.map { |person| puts "ID: #{person.id} , Name: #{person.name}, Age: #{person.age}"}
         end
 
         def self.create_classroom(label)
@@ -22,11 +22,22 @@ class App
             person_type = gets.chomp.to_i
             case person_type
             when 1 
-            create_student
-
+                print "Age: "
+                student_age = gets.chomp.to_i
+                print "Name: "
+                student_name = gets.chomp.to_s
+                print "Has parent permission ? [Y/N]: "
+                parent_permission = gets.chomp
+                new_student = Student.new(student_age, student_name, parent_permission: true) if %w[Y y].include?(parent_permission)
+                new_student = Student.new(student_age, student_name, parent_permission: false) if %w[N n].include?(parent_permission)
             when 2
-            create_teacher
-
+                print "Age: "
+                teacher_age = gets.chomp.to_i
+                print "Name: "
+                teacher_name = gets.chomp.to_s
+                print "Specialization: "
+                specialization = gets.chomp.to_s
+                new_teacher = Teacher.new( specialization, teacher_age, teacher_name,)
             else 
             puts "Invalid choice. Please enter a valid option."
             execute(3)
@@ -34,26 +45,6 @@ class App
             puts "Person created successfully"
         end
 
-        def create_student
-            print "Age: "
-            student_age = gets.chomp.to_i
-            print "Name: "
-            student_name = gets.chomp.to_s
-            print "Has parent permission ? [Y/N]: "
-            parent_permission = gets.chomp
-            Student.new(student_age, student_name, parent_permission: true) if %w[Y y].include?(parent_permission)
-            Student.new(student_age, student_name, parent_permission: false) if %w[N n].include?(parent_permission)
-        end
-
-        def create_teacher
-            print "Age: "
-            teacher_age = gets.chomp.to_i
-            print "Name: "
-            teacher_name = gets.chomp.to_s
-            print "Specialization: "
-            specialization = gets.chomp.to_s
-            Teacher.new(teacher_age, teacher_name, specialization)
-        end
 
         def self.create_book
             print "Title: "
@@ -82,10 +73,16 @@ class App
         end
 
         def self.list_rentals
-            
+            print "ID of person: "
+            id = gets.chomp.to_i
+            person = Person.all.select { |x| x.id == id}[0]
+
+            if person
+                puts "Rentals:"
+                person.rentals.each { |rental| puts "Date: #{rental.date}, Book: #{rental.book.title}"}
+            else 
+                puts "Person with the given ID does not exist "
+            end
         end
 
 end
-
-app = App.new
-app.main
