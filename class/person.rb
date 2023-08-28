@@ -7,7 +7,7 @@ class Person < Nameable
   attr_reader :id
 
   def initialize(age = nil, name = 'Unknown', parent_permission: true)
-    super
+    super()
     @id = generate_id
     @name = name
     @parent_permission = parent_permission
