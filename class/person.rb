@@ -7,7 +7,7 @@ class Person < Nameable
   attr_reader :id
 
   def initialize(age = nil, name = 'Unknown', parent_permission: true)
-    super
+    super()
     @id = generate_id
     @name = name
     @parent_permission = parent_permission
@@ -17,6 +17,10 @@ class Person < Nameable
 
   def can_use_services?
     of_age? || @parent_permission
+  end
+
+  def self.all
+    ObjectSpace.each_object(self).to_a
   end
 
   def correct_name
@@ -34,11 +38,11 @@ class Person < Nameable
   end
 end
 
-person = Person.new(22, 'maximillianus')
-puts person.correct_name
+# person = Person.new(22, 'maximillianus')
+# puts person.correct_name
 
-capitalized_person = CapitalizeDecorator.new(person)
-puts capitalized_person.correct_name
+# capitalized_person = CapitalizeDecorator.new(person)
+# puts capitalized_person.correct_name
 
-capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-puts capitalized_trimmed_person.correct_name
+# capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+# puts capitalized_trimmed_person.correct_name

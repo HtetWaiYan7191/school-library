@@ -41,6 +41,9 @@ def execute(user_choice)
     App.list_rentals
     display_ui
 
+    when 7
+    abort "Thank you for using the app. Good bye for now !"
+
     else 
     puts " Invalid choice . Please enter a valid option"
     display_ui
