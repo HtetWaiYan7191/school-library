@@ -50,6 +50,7 @@ def execute(user_choice)
     display_ui
   end
 end
+# rubocop:enable Metrics
 
 puts 'Welcome to School Library App!'
 display_ui

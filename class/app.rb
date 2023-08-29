@@ -22,28 +22,38 @@ class App
     person_type = gets.chomp.to_i
     case person_type
     when 1
-      print 'Age: '
-      age = gets.chomp.to_i
-      print 'Name: '
-      name = gets.chomp.to_s
-      print 'Has parent permission ? [Y/N]: '
-      choice = gets.chomp
-      Student.new(age, name, parent_permission: true) if %w[Y y].include?(choice)
-      Student.new(age, name, parent_permission: false) if %w[N n].include?(choice)
-
+      create_student
     when 2
-      print 'Age: '
-      teacher_age = gets.chomp.to_i
-      print 'Name: '
-      teacher_name = gets.chomp.to_s
-      print 'Specialization: '
-      specialization = gets.chomp.to_s
-      Teacher.new(specialization, teacher_age, teacher_name)
+      create_teacher
     else
       puts 'Invalid choice. Please enter a valid option.'
       execute(3)
     end
     puts 'Person created successfully'
+  end
+
+  def self.create_student
+    print 'Age: '
+    age = gets.chomp.to_i
+    print 'Name: '
+    name = gets.chomp.to_s
+    print 'Has parent permission ? [Y/N]: '
+    choice = gets.chomp
+    if %w[Y y].include?(choice)
+      Student.new(age, name, parent_permission: true)
+    elsif %w[N n].include?(choice)
+      Student.new(age, name, parent_permission: false)
+    end
+  end
+
+  def self.create_teacher
+    print 'Age: '
+    teacher_age = gets.chomp.to_i
+    print 'Name: '
+    teacher_name = gets.chomp.to_s
+    print 'Specialization: '
+    specialization = gets.chomp.to_s
+    Teacher.new(specialization, teacher_age, teacher_name)
   end
 
   def self.create_book
