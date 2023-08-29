@@ -11,7 +11,7 @@ class Book
   def self.all
     ObjectSpace.each_object(self).to_a
   end
-  
+
   def add_rental(date, person)
     Rental.new(date, person, self)
   end
