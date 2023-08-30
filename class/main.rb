@@ -1,6 +1,5 @@
 require_relative 'app'
 require_relative 'execute'
-# rubocop:disable Metrics
 class Main
   def display_ui
     puts 'Please choose an option by entering a number:'
@@ -16,7 +15,5 @@ class Main
     Execute.new(user_choice).execute
   end
 end
-# rubocop:enable Metrics
-
 puts 'Welcome to School Library App!'
 Main.new.display_ui
