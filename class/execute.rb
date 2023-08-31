@@ -32,6 +32,7 @@ class Execute
       Main.new.display_ui
 
     when 7
+      App.save_data
       abort 'Thank you for using the app. Good bye for now !'
 
     else
