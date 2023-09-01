@@ -3,7 +3,7 @@ require_relative 'book'
 require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
-require 'pry'
+# require 'pry'
 
 class App
   def self.list_books
@@ -41,12 +41,12 @@ class App
     print 'Has parent permission ? [Y/N]: '
     choice = gets.chomp
     if %w[Y y].include?(choice)
-      Student.new(name, age, parent_permission: true)
+       Student.new(name, age, parent_permission: true)
     elsif %w[N n].include?(choice)
       Student.new(name, age, parent_permission: false)
     end
   end
-  binding.pry
+  # binding.pry
 
   def self.create_teacher
     print 'Age: '
