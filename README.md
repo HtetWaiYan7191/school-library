@@ -106,6 +106,11 @@ it will install the required gemfile for running the project
 
 - GitHub: [@HtetWaiYan7191](https://github.com/HtetWaiYan7191)
 
+👤 Md. Porag Sarkar
+- GitHub: [@porag-m06](https://github.com/porag-m06)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammad-porag-nsu-cse/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
