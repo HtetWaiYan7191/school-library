@@ -106,6 +106,14 @@ it will install the required gemfile for running the project
 
 - GitHub: [@HtetWaiYan7191](https://github.com/HtetWaiYan7191)
 
+## 👥 Authors <a name="authors"></a>
+
+
+👤 **Sazzad**
+
+- GitHub: [@githubhandle](https://github.com/SAZZAD1Q2/School-Library.git)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/sazzad3y/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
