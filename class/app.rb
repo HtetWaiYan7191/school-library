@@ -116,5 +116,4 @@ class App
     File.write('rentals.json', rentals)
     puts ' Save successfully ! '
   end
-
 end

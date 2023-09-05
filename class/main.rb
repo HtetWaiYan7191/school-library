@@ -20,7 +20,7 @@ class Main
 
   # rubocop:disable Metrics/MethodLength
   def load_data
-    books = JSON.parse(File.read('books.json')) 
+    books = JSON.parse(File.read('books.json'))
     people = JSON.parse(File.read('people.json'))
     rentals = JSON.parse(File.read('rentals.json'))
 
