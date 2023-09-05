@@ -100,4 +100,21 @@ class App
     end
   end
 
+  def self.save_data
+    puts books = Book.all.map { |book| { title: book.title, author: book.author } }.to_a.to_json
+    puts people = Person.all.map do |person|
+      { id: person.id, age: person.age, name: person.name, rental: [] }
+    end.to_a.to_json
+    puts rentals = Rental.all.map do |rental|
+      { date: rental.date, person: { id: rental.person.id, age: rental.person.age, name: rental.person.name },
+        book: { author: rental.book.author, title: rental.book.title } }
+    end.to_a.to_json
+
+    # save data in the file
+    File.write('books.json', books)
+    File.write('people.json', people)
+    File.write('rentals.json', rentals)
+    puts ' Save successfully ! '
+  end
+
 end
