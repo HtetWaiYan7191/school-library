@@ -22,8 +22,8 @@ class Main
   # rubocop:disable Metrics/AbcSize
   # rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
   def load_data
-    if File.exist?('books.json')
-      books_data = File.read('books.json')
+    if File.exist?('./class/books.json')
+      books_data = File.read('./class/books.json')
       if books_data.empty?
         puts 'No books available.'
       else
@@ -37,8 +37,8 @@ class Main
       puts 'Books file does not exist.'
     end
 
-    if File.exist?('people.json')
-      people_data = File.read('people.json')
+    if File.exist?('./class/people.json')
+      people_data = File.read('./class/people.json')
       if people_data.empty?
         puts 'No person available'
       else
@@ -52,8 +52,8 @@ class Main
       puts 'Person file does not exist.'
     end
 
-    if File.exist?('rentals.json')
-      rental_data = File.read('rentals.json')
+    if File.exist?('./class/rentals.json')
+      rental_data = File.read('./class/rentals.json')
       if rental_data.empty?
         puts 'No Rentals available'
       else
