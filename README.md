@@ -102,17 +102,20 @@ it will install the required gemfile for running the project
 
 ## 👥 Author <a name="author"></a>
 
-👤 Htet Wai Yan
+👤 **Htet Wai Yan**
 
 - GitHub: [@HtetWaiYan7191](https://github.com/HtetWaiYan7191)
-
-## 👥 Authors <a name="authors"></a>
-
 
 👤 **Sazzad**
 
 - GitHub: [@githubhandle](https://github.com/SAZZAD1Q2/School-Library.git)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/sazzad3y/)
+
+👤 **Md. Porag Sarkar**
+- GitHub: [@porag-m06](https://github.com/porag-m06)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammad-porag-nsu-cse/)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
