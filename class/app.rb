@@ -3,6 +3,7 @@ require_relative 'book'
 require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
+require 'json'
 
 class App
   def self.list_books
@@ -97,5 +98,28 @@ class App
     else
       puts 'Person with the given ID does not exist '
     end
+  end
+
+  def self.save_data
+    books = Book.all.map { |book| { title: book.title, author: book.author } }
+    people = Person.all.map do |person|
+      { id: person.id, age: person.age, name: person.name, rental: [] }
+    end
+    rentals = Rental.all.map do |rental|
+      { date: rental.date, person: { id: rental.person.id, age: rental.person.age, name: rental.person.name },
+        book: { author: rental.book.author, title: rental.book.title } }
+    end
+
+    # Convert the arrays to JSON strings
+    books_json = books.to_json
+    people_json = people.to_json
+    rentals_json = rentals.to_json
+
+    # Save data in the files
+    File.write('books.json', books_json)
+    File.write('people.json', people_json)
+    File.write('rentals.json', rentals_json)
+
+    puts 'Save successfully!'
   end
 end
